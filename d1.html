@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="user-scalable=no">
-  <title>Howler.js Audio Player</title>
+  <title>TGAT Leuven</title>
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
@@ -20,8 +20,8 @@
       <div id="loading"></div>
       <div class="btn" id="playBtn"></div>
       <div class="btn" id="pauseBtn"></div>
-      <!-- <div class="btn" id="prevBtn"></div> -->
-      <!-- <div class="btn" id="nextBtn"></div> -->
+      <div class="btn" id="prevBtn"></div>
+      <div class="btn" id="nextBtn"></div>
     </div>
     <!-- <div class="btn" id="playlistBtn"></div> -->
     <div class="btn" id="volumeBtn"></div>
@@ -54,6 +54,12 @@ var player = new Player([
   },
 ]);
 
+prevBtn.addEventListener('click', function() {
+  player.move(-10);
+});
+nextBtn.addEventListener('click', function() {
+  player.move(10);
+});
 // Bind our player controls.
 playBtn.addEventListener('click', function() {
   player.play();

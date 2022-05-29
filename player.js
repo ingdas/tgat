@@ -1,5 +1,5 @@
 /*!
- *  Howler.js Audio Player Demo
+ *  TGAT Leuven Demo
  *  howlerjs.com
  *
  *  (c) 2013-2020, James Simpson of GoldFire Studios
@@ -199,6 +199,12 @@ Player.prototype = {
     if (sound.playing()) {
       sound.seek(sound.duration() * per);
     }
+  },
+
+  move: function(amt) {
+    var self = this;
+    var sound = self.playlist[self.index].howl;
+    sound.seek(Math.max(0,(sound.seek() || 0) + amt));
   },
 
   /**
